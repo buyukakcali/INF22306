@@ -1,5 +1,6 @@
-def assd():
+def getsometihng():
+    print('Yallah!')
     return 0
 
 
-print(assd())
+print(getsometihng())
