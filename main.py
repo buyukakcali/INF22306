@@ -10,4 +10,4 @@ print(df.columns)
 df = df.rename(columns={'A': 'X', 'B': 'Y', 'C': 'Z'})
 
 # print the updated column names
-print(df.columns)
+print(f'Columns with new name:\n {df.columns}')
