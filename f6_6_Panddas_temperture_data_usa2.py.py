@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-import f_6_3_temperture_data_usa1 as tdu1
+import f6_3_temperture_data_usa1 as tdu1
 
 
 def cnv_fah2cel(fahr):
