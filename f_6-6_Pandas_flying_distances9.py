@@ -1,6 +1,6 @@
 def getsometihng():
     print('Yallah!')
-    return 0
+    return 12
 
 
 print(getsometihng())
