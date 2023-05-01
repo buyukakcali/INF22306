@@ -13,13 +13,14 @@ OUTPUTS: the output of this is a text file in Python project folder containing t
 
 def data_cities():
     d = {}
-    Amsterdam = ('Amsterdam', ('52'+chr(176), '22\'', 'N'), ('4'+chr(176), '32\'', 'E'))
-    Montreal = ('Montreal', ('45'+chr(176), '52\'', 'N'), ('73'+chr(176), '35\'', 'W'))
-    Auckland = ('Auckland', ('36'+chr(176), '52\'', 'S'), ('174'+chr(176), '45\'', 'E'))
+    Amsterdam = ('Amsterdam', ('52' + chr(176), '22\'', 'N'), ('4' + chr(176), '32\'', 'E'))
+    Montreal = ('Montreal', ('45' + chr(176), '52\'', 'N'), ('73' + chr(176), '35\'', 'W'))
+    Auckland = ('Auckland', ('36' + chr(176), '52\'', 'S'), ('174' + chr(176), '45\'', 'E'))
     d['Amsterdam'] = Amsterdam
     d['Montreal'] = Montreal
     d['Auckland'] = Auckland
     return d
+
 
 # Writing to text file
 def save_to_file(document):
@@ -31,6 +32,7 @@ def save_to_file(document):
             longitude = f"{data[2][0]} {data[2][1]} {data[2][2]}"
             line = f"Name: {name} Latitude: {latitude} Longitude: {longitude}\n"
             file.write(line)
+
 
 if __name__ == '__main__':
     save_to_file('f_4_2_data_cities.txt')
