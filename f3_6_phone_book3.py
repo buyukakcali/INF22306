@@ -1,8 +1,8 @@
 import shelve
 
+
 def check_person(phonebook, name):
     return name in phonebook
-
 
 def lookup(phonebook, name):
     print("I am looking up the number of you")
@@ -12,12 +12,9 @@ def lookup(phonebook, name):
         number = "dummy"
     return number
 
-
 def enter(phonebook, name, number):
     print("I am going to enter this for you")
     phonebook[name] = number
-
-
 # new_contact = {
 #     name : number
 # }
@@ -27,17 +24,15 @@ def remove(phonebook, name):
     phonebook.pop(the_name)
     print("I am deleting this person from your phonebook")
 
-
 def help_app():
     print("You can do lookup / enter / remove; type quit to stop")
-
 
 def quit_app():
     print("Thank you, goodbye!")
 
 
 # main program
-with shelve.open("phonebook_data.shelve") as the_phonebook:
+with shelve.open("f3_6_phonebook_data.shelve") as the_phonebook:
     print("Welcome to the phonebook program")
     help_app()
     user_input = "dumy"

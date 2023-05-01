@@ -88,4 +88,6 @@ for i in range(len(year)):
         print(f'At the end of {year[i]}, carrot is over 50.000')
 
 #--------------------------------------------------------------
-
+print(hare_points)
+print(lynx_points)
+print(np.gradient(hare_points,lynx_points))
