@@ -13,9 +13,9 @@ OUTPUTS: the output of this is a text file in Python project folder containing t
 
 def data_cities():
     d = {}
-    Amsterdam = ('Amsterdam', ('52' + chr(176), '22\'', 'N'), ('4' + chr(176), '32\'', 'E'))
-    Montreal = ('Montreal', ('45' + chr(176), '52\'', 'N'), ('73' + chr(176), '35\'', 'W'))
-    Auckland = ('Auckland', ('36' + chr(176), '52\'', 'S'), ('174' + chr(176), '45\'', 'E'))
+    Amsterdam = ('Amsterdam', [52 , 22, 1], [4, 53, 'E'])
+    Montreal = ('Montreal', [45, 52, 'N'], [73, 35, 'W'])
+    Auckland = ('Auckland', [36, 52, 'S'], [174, 45, 'E'])
     d['Amsterdam'] = Amsterdam
     d['Montreal'] = Montreal
     d['Auckland'] = Auckland
@@ -23,16 +23,29 @@ def data_cities():
 
 
 # Writing to text file
-def save_to_file(document):
-    city_dict1 = data_cities()
-    with open(document, 'w') as file:
+def save_to_file(file:str, dict1:dict):
+    city_dict1 = dict1
+    with open(file, 'w') as file:
         for city, data in city_dict1.items():
             name = data[0]
-            latitude = f"{data[1][0]} {data[1][1]} {data[1][2]}"
-            longitude = f"{data[2][0]} {data[2][1]} {data[2][2]}"
+
+            if type(data[1][2]) != str:
+                if data[1][2] == 1:
+                    data[1][2] = 'N'
+                elif data[1][2] == -1:
+                    data[1][2] = 'S'
+
+            if type(data[2][2]) != str:
+                if data[2][2] == 1:
+                    data[2][2] = 'E'
+                elif data[2][2] == -1:
+                    data[2][2] = 'W'
+
+            latitude = f"{str(data[1][0])}{chr(176)}, {str(data[1][1])}\' {data[1][2]}"
+            longitude = f"{str(data[2][0])}{chr(176)} {str(data[2][1])}\' {data[2][2]}"
             line = f"Name: {name} Latitude: {latitude} Longitude: {longitude}\n"
             file.write(line)
 
 
 if __name__ == '__main__':
-    save_to_file('f_4_2_data_cities.txt')
+    save_to_file('f4_2_data_cities.txt',data_cities())

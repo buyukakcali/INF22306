@@ -1,3 +1,0 @@
-Name: Amsterdam Latitude: 52° 22' N Longitude: 4° 32' E
-Name: Montreal Latitude: 45° 52' N Longitude: 73° 35' W
-Name: Auckland Latitude: 36° 52' S Longitude: 174° 45' E
