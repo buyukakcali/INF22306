@@ -1,0 +1,5 @@
+Latitude: write
+
+no lat or long so write
+
+Longitude: write

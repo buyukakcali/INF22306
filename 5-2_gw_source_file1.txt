@@ -1,0 +1,6 @@
+not match:
+should match :f
+ :asdsf
+qwert:
+test :
+hkjg
