@@ -6,7 +6,7 @@ Script for calculating the distance flown between two cities
     Functions: Haversine, convert, km
 """
 import math
-from string_splitter import string_split
+from f2_1_CE_string_splitter import string_split
 
 
 def haversine(lat1, lon1, lat2, lon2):

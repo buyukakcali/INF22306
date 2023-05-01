@@ -68,13 +68,13 @@ if __name__ == '__main__':
     # ---------------------------------------------------------------------------------
 
     # test 1 :
-    print(data_filter('5-2_gw_source_file1.txt', '5-2_gw_output_file1.txt', re_string1, False))
+    print(data_filter('f5_2_gw_source_file1.txt', 'f5_2_gw_output_file1.txt', re_string1, False))
 
     # test 2 :
-    print(data_filter('5-2_gw_source_file2.py', '5-2_gw_output_file2.py', re_string2, False))
+    print(data_filter('f5_2_gw_source_file2.py', 'f5_2_gw_output_file2.py', re_string2, False))
 
     # test 3 :
-    print(data_filter('5-2_gw_source_file3.txt', '5-2_gw_output_file3.txt', re_string3, False))
+    print(data_filter('f5_2_gw_source_file3.txt', 'f5_2_gw_output_file3.txt', re_string3, False))
 
     # test 4 :
-    print(data_filter('5-2_gw_source_file4.html', '5-2_gw_output_file4.html', re_string4, False))
+    print(data_filter('f5_2_gw_source_file4.html', 'f5_2_gw_output_file4.html', re_string4, False))
