@@ -1,6 +1,5 @@
 import pandas as pd
 import f4_2_gw_flying_distance5 as fd5
-import f1_3_gw_flying_distance1 as fd1
 
 def rad_to_deg(rad):
     dir = 1
