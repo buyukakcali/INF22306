@@ -7,8 +7,8 @@ def read_order2(filename):
         for line in f:
             p = re.compile('([0-9]*)\t([A-Za-z0-9 ]*)\t([0-9]*)\t(.*)\t(.*)')
             m = p.match(line)
-            print(m)    # check code
-            print(m[5]) # check code example
+            print(m)        # check code
+            print(m[5])     # check code example
             name = m[2]
             quantity = int(m[3])
             if name in products:
