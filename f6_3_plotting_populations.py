@@ -25,7 +25,7 @@ year_points: ndarray = np.array(year)
 hare_points = np.array(hare_pop)
 lynx_points = np.array(lynx_pop)
 carrot_points = np.array(carrot_pop)
-'''
+
 coolor = (["blue", "red", "green"])
 plt.figure(figsize=(8, 4))  # it defines size of figure on your screen.
 #plt.plot(year_points, hare_points, year_points,lynx_points, year_points, carrot_points, colors=coolor) # does not work
@@ -50,49 +50,83 @@ plt.xticks(ax)
 
 plt.legend() # this function writes the names and pipes with their colors on the top-right of figure
 
-#------------------------------------------------------------------------------Assignment 1
-#plt.show()
-'''
-#------------------------------------------------------------------------------Assignment 2
-'''
-print(f'Assignment 2: which year each species had the largest population\n\
-Hare= {year[np.argmax(hare_pop)]}\nLynx= {year[np.argmax(lynx_pop)]}\nCarrot= {year[np.argmax(carrot_pop)]}')
+print('#------------------------------------------------------------------------------ Assignment 1')
+plt.show()
 
-#------------------------------------------------------------------------------ Assignment 3
+print('#------------------------------------------------------------------------------ Assignment 2')
+
+print(f'Assignment 2: which year each species had the largest population\n\
+Carrot= {year[np.argmax(carrot_pop)]}\nHare= {year[np.argmax(hare_pop)]}\nLynx= {year[np.argmax(lynx_pop)]}')
+
+print('#------------------------------------------------------------------------------ Assignment 3')
 print(f'Assignment 3: which species has the largest population for each year\nYear = Specie')
 
 year_max_species = []
 for i in range(len(year)):
-    specie = np.argmax([hare_pop[i], lynx_pop[i], carrot_pop[i]])
+    specie = np.argmax([carrot_pop[i], hare_pop[i], lynx_pop[i]])
     if specie == 0:
-        year_max_species += ['hare']
-    elif specie == 1:
-        year_max_species += ['lynx']
-    elif specie == 2:
         year_max_species += ['carrot']
+    elif specie == 1:
+        year_max_species += ['hare']
+    elif specie == 2:
+        year_max_species += ['lynx']
 
 for i in range(len(year_max_species)):
-    print(f'{year[i]} = {year_max_species[i]}')'''
+    print(f'{year[i]} = {year_max_species[i]}')
 
-#------------------------------------------------------------------------------ Assignment 4
-'''
+print('#------------------------------------------------------------------------------ Assignment 4')
+
 print(f'Assignment 4:  which years any of the populations is above 50,000\nYear  =  Species')
 
-above_fifty000 = []
 for i in range(len(year)):
-    if np.any(hare_pop[i] > 50000):
-        print(f'At the end of {year[i]}, hare is over 50.000')
-    if np.any(lynx_pop[i] > 50000):
-        print(f'At the end of {year[i]}, lynx is over 50.000')
+    above_fifty000 = []
     if np.any(carrot_pop[i] > 50000):
-        print(f'At the end of {year[i]}, carrot is over 50.000')'''
+        above_fifty000 += ['carrot']
+    if np.any(hare_pop[i] > 50000):
+        above_fifty000 += ['hare']
+    if np.any(lynx_pop[i] > 50000):
+        above_fifty000 += ['lynx']
+    if above_fifty000 != []:
+        text = ''
+        for j in range(len(above_fifty000)):
+            if j == len(above_fifty000)-1:
+                text += above_fifty000[j]
+            else:
+                text += above_fifty000[j] + ', '
+        print(str(year[i]) + ' = ' + text)
+    else:
+        print(f'{year[i]} all species are under 50.000 population')
 
-#--------------------------------------------------------------
+print('#------------------------------------------------------------------------------ Assignment 5')
 
 hare_pop_dec = np.gradient(hare_pop)
-print(hare_pop_dec)
-print(lynx_points)
 
-plt.plot(year_points,-hare_pop_dec)
-plt.plot(year_points, lynx_points)
+plt.figure(figsize=(8, 4))  # it defines size of figure on your screen.
+
+plt.xlabel('Year')
+plt.ylabel('Amount')
+plt.title('Relation between lynx population and the hare death rate')
+
+plt.plot(year_points, -hare_pop_dec, color='green', label='hares death rate')
+plt.plot(year_points, lynx_points, color='r', label='lynxes population')
+
+plt.xticks(np.linspace(min(year), max(year), num=5))
+plt.legend()
 plt.show()
+
+print('#------------------------------------------------------------------------------ Assignment 6')
+
+hare_pop_dec = np.gradient(hare_pop)
+
+plt.figure(figsize=(8, 4))  # it defines size of figure on your screen.
+
+plt.xlabel('Lynxes')
+plt.ylabel('Hare birth rate')
+plt.title('the change in hare population against the lynx population')
+
+plt.scatter(lynx_points, hare_pop_dec)
+
+plt.show()
+
+res = np.corrcoef(hare_points, lynx_points)
+print(res)
