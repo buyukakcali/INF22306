@@ -114,7 +114,6 @@ plt.xticks(np.linspace(min(year), max(year), num=5))
 plt.legend()
 plt.show()
 
-print('#------------------------------------------------------------------------------ Assignment 6')
 
 hare_pop_dec = np.gradient(hare_pop)
 
@@ -125,8 +124,9 @@ plt.ylabel('Hare birth rate')
 plt.title('the change in hare population against the lynx population')
 
 plt.scatter(lynx_points, hare_pop_dec)
-
 plt.show()
+
+print('#------------------------------------------------------------------------------ Assignment 6')
 
 res = np.corrcoef(hare_points, lynx_points)
 print(res)
