@@ -1,0 +1,5 @@
+1- Correct	- Tomorrow's temperature will be 11.20 °C
+2- Wrong	- Type Error. It must be number but it is srt
+3- Correct	- Tomorrow's temperature will be 11.20 °C, with 3.20 millimeters of rain and a medium wind
+4- Correct	- Tomorrow's temperature will be 11.20 °C, with 3.20 millimeters of rain
+5- Wrong	- NameError: name 'medium' is not defined
