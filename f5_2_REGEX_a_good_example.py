@@ -19,4 +19,4 @@ def read_order2(filename):
 
 
 result = read_order2('receipt_2020_0001.txt')
-# print(result)
+print(result)
