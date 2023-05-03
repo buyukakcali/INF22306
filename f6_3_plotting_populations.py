@@ -25,7 +25,7 @@ year_points: ndarray = np.array(year)
 hare_points = np.array(hare_pop)
 lynx_points = np.array(lynx_pop)
 carrot_points = np.array(carrot_pop)
-
+'''
 coolor = (["blue", "red", "green"])
 plt.figure(figsize=(8, 4))  # it defines size of figure on your screen.
 #plt.plot(year_points, hare_points, year_points,lynx_points, year_points, carrot_points, colors=coolor) # does not work
@@ -52,7 +52,7 @@ plt.legend() # this function writes the names and pipes with their colors on the
 
 #------------------------------------------------------------------------------Assignment 1
 #plt.show()
-
+'''
 #------------------------------------------------------------------------------Assignment 2
 '''
 print(f'Assignment 2: which year each species had the largest population\n\
@@ -88,6 +88,8 @@ for i in range(len(year)):
         print(f'At the end of {year[i]}, carrot is over 50.000')
 
 #--------------------------------------------------------------
-print(hare_points)
-print(lynx_points)
-print(np.gradient(hare_points,lynx_points))
+
+hare_pop_dec = np.gradient(-hare_points)
+
+plt.plot(hare_points, lynx_points)
+plt.show()
