@@ -75,7 +75,7 @@ for i in range(len(year_max_species)):
     print(f'{year[i]} = {year_max_species[i]}')'''
 
 #------------------------------------------------------------------------------ Assignment 4
-
+'''
 print(f'Assignment 4:  which years any of the populations is above 50,000\nYear  =  Species')
 
 above_fifty000 = []
@@ -85,11 +85,14 @@ for i in range(len(year)):
     if np.any(lynx_pop[i] > 50000):
         print(f'At the end of {year[i]}, lynx is over 50.000')
     if np.any(carrot_pop[i] > 50000):
-        print(f'At the end of {year[i]}, carrot is over 50.000')
+        print(f'At the end of {year[i]}, carrot is over 50.000')'''
 
 #--------------------------------------------------------------
 
-hare_pop_dec = np.gradient(-hare_points)
+hare_pop_dec = np.gradient(hare_pop)
+print(hare_pop_dec)
+print(lynx_points)
 
-plt.plot(hare_points, lynx_points)
+plt.plot(year_points,-hare_pop_dec)
+plt.plot(year_points, lynx_points)
 plt.show()
