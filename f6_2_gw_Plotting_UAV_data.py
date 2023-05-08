@@ -35,4 +35,3 @@ def plot_uav_data():
 
 if __name__ == '__main__':
     plot_uav_data()
-

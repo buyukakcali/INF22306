@@ -51,8 +51,8 @@ def convert_strTolist(str1):
 
 if __name__ == '__main__':
 
-    #data = [9, 18, 13, 9, 6, 6, 16, 6, 17, 10, 15, 16, 13, 11, 13, 8, 20, 6, 18, 11]
-    #print(simple_histogram(data))
+    data = [9, 18, 13, 9, 6, 6, 16, 6, 17, 10, 15, 16, 13, 11, 13, 8, 20, 6, 18, 11]
+    print(simple_histogram(data))
 
-    test_other_data_list = input("Enter some integers or floats to get the smple histogram.\n(While entering use comma please, like 2,4.6,-5 etc.):")
-    print(simple_histogram(convert_strTolist(test_other_data_list)))
+    # test_other_data_list = input("Enter some integers or floats to get the smple histogram.\n(While entering use comma please, like 2,4.6,-5 etc.):")
+    # print(simple_histogram(convert_strTolist(test_other_data_list)))

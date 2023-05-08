@@ -32,16 +32,16 @@ df = pd.DataFrame(exam_data, labels)
 # print('Standard Dev:', df.grade.std())
 
 #6. Replace the missing grades by a pass grade, i.e. 6, and update the corresponding 'qualify' rows.
-# df.grade = df.grade.replace(np.nan, 6)
-# df.qualify = df.qualify.replace('no grade', 'yes')
-# print(df)
+df.grade = df.grade.replace(np.nan, 6)
+df.qualify = df.qualify.replace('no grade', 'yes')
+print(df)
 
 # 7. Using matplotlib Python library, create some plots to present a visual representation of the
 # information in the DataFrame of task 6, such as a histogram or a box plot of students grades,
 # and a bar plot for the number of attempts per each student. Use PyPlot methods to improve the
 # readability of your figures.
 
-plt.barh(df.student_name, df.grade)
-plt.xlabel('Points')
-plt.ylabel('Student Names')
-plt.show()
+# plt.barh(df.student_name, df.grade)
+# plt.xlabel('Points')
+# plt.ylabel('Student Names')
+# plt.show()
